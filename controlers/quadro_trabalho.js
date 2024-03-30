@@ -1,6 +1,5 @@
 const fs = require("fs")
 
-
 function getQuadroTrabalho(req, res) {
     try {
         const livros = JSON.parse(fs.readFileSync("quadro_trabalho.json"))

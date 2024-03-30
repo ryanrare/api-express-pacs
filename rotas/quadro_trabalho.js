@@ -1,7 +1,6 @@
 const { Router } = require("express")
 const { getQuadroTrabalho } = require("../controlers/quadro_trabalho")
 
-
 const router = Router()
 
 router.get('/', getQuadroTrabalho)

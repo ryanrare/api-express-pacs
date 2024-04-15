@@ -1,0 +1,22 @@
+{
+  "name": "api-express-pacs",
+  "version": "1.0.0",
+  "description": "Uma api com express explorando bibliotecas PACS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanrare/api-express-pacs.git"
+  },
+  "author": "Ryan Victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanrare/api-express-pacs/issues"
+  },
+  "homepage": "https://github.com/ryanrare/api-express-pacs#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

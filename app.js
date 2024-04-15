@@ -1,10 +1,11 @@
-const express = require('express')
-const app = express()
-const port = 8000
+const express = require("express")
+const rota_trabalho = require("./rotas/quadro_trabalho")
 
-app.get('/', (req, res) => {
-  res.send('Primeiro teste!')
-})
+const app = express()
+
+app.use('/quadro_trabalho', rota_trabalho)
+
+const port = 8000
 
 app.listen(port, () => {
   console.log(`Escutando a porta ${port}`)

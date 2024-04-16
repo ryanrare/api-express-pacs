@@ -1,9 +1,14 @@
 const { Router } = require("express")
-const { getQuadroTrabalho } = require("../controlers/quadro_trabalho")
+const { getQuadroTrabalhos, getQuadroTrabalho } = require("../controlers/quadro_trabalho")
+
 const router = Router()
 
-router.get('/', getQuadroTrabalho)
+// GET
+router.get('/', getQuadroTrabalhos)
 
+router.get('/:id', getQuadroTrabalho)
+
+// Demais
 router.post('/', (req, res) => {
     res.send('insert de um quadro de trabalho de um usuario')
 })

@@ -1,10 +1,22 @@
-const fs = require("fs")
+const { getTodosQuadroTrabalho, getQuadroTrabalhoByID } = require("../services/quadro_trabalho")
+
+
+function getQuadroTrabalhos(req, res) {
+    try {
+        const all_quadro_trabalho = getTodosQuadroTrabalho() 
+
+        res.send(all_quadro_trabalho)
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+}
 
 function getQuadroTrabalho(req, res) {
     try {
-        const livros = JSON.parse(fs.readFileSync("quadro_trabalho.json"))
-
-        res.send(livros)
+        const id = req.params.id
+        const quadro_trabalho = getQuadroTrabalhoByID(id) 
+        res.send(quadro_trabalho)
     } catch (error) {
         res.status(500)
         res.send(error.message)
@@ -12,5 +24,6 @@ function getQuadroTrabalho(req, res) {
 }
 
 module.exports = {
+    getQuadroTrabalhos,
     getQuadroTrabalho
 }

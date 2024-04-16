@@ -12,5 +12,12 @@
         "quadro_trabalho": "Repositor",
         "horario_inicio": "2024-04-15 13:00:00",
         "horario_termino": "2024-04-15 15:00:00"
+    },
+    {
+        "id": 3,
+        "usuario": "Rosita",
+        "quadro_trabalho": "Repositor",
+        "horario_inicio": "2024-04-15 13:00:00",
+        "horario_termino": "2024-04-15 15:00:00"
     }
 ]

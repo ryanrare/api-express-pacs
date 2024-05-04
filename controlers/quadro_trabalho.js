@@ -47,7 +47,7 @@ function patchQuadroTrabalho(req, res) {
         const body = req.body
 
         updateQuadroTrabalho(body, id)
-        res.send("item do quadro de trabalho modificado com sucesso")
+        res.send("item de quadro de trabalho modificado com sucesso")
     } catch (error) {
         res.status(500)
         res.send(error.message)

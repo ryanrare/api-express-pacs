@@ -3,6 +3,8 @@ const rota_trabalho = require("./rotas/quadro_trabalho")
 
 const app = express()
 
+app.use(express.json())
+
 app.use('/quadro_trabalho', rota_trabalho)
 
 const port = 8000

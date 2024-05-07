@@ -4,17 +4,32 @@ function getTodosQuadroTrabalho() {
     return JSON.parse( fs.readFileSync("quadro_trabalho.json") )
 }
 
-function getQuadroTrabalhoByID(id) {
-    console.log(id)
-    
+function getQuadroTrabalhoByID(id) {    
     const quadro_trabalhos = JSON.parse( fs.readFileSync("quadro_trabalho.json") )
-    console.log(quadro_trabalhos)
     const quadroFiltrado = quadro_trabalhos.filter( quadro => quadro.id === parseInt(id) )
-    console.log(quadroFiltrado)
     return quadroFiltrado
+}
+
+function insertQuadroTrabalho(quadroNovo) {
+    const quadro_trabalhos = JSON.parse(fs.readFileSync("quadro_trabalho.json"))
+
+    const novoQuadroTrabalhos = [ ...quadro_trabalhos, quadroNovo ]
+
+    fs.writeFileSync("quadro_trabalho.json", JSON.stringify(novoQuadroTrabalhos))
+}
+
+function updateQuadroTrabalho(modificacoes, id) {
+    const quadroAtuais = JSON.parse(fs.readFileSync("quadro_trabalho.json"))
+    const indiceModificado = quadroAtuais.findIndex(quadro_trabalho => quadro_trabalho.id == id)
+    const conteudoMudado = { ...quadroAtuais[indiceModificado], ...modificacoes }
+
+    quadroAtuais[indiceModificado] = conteudoMudado
+    fs.writeFileSync("quadro_trabalho.json", JSON.stringify(quadroAtuais))
 }
 
 module.exports = {
     getTodosQuadroTrabalho,
-    getQuadroTrabalhoByID
+    getQuadroTrabalhoByID,
+    insertQuadroTrabalho,
+    updateQuadroTrabalho
 }

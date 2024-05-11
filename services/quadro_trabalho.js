@@ -27,9 +27,17 @@ function updateQuadroTrabalho(modificacoes, id) {
     fs.writeFileSync("quadro_trabalho.json", JSON.stringify(quadroAtuais))
 }
 
+function deletarQuadroPorId(id) {
+    const quadros = JSON.parse(fs.readFileSync("quadro_trabalho.json"))
+
+    const quadrosFiltrados = quadros.filter( livro => livro.id!== id )
+    fs.writeFileSync("quadro_trabalho.json", JSON.stringfy(quadrosFiltrados))
+}
+
 module.exports = {
     getTodosQuadroTrabalho,
     getQuadroTrabalhoByID,
     insertQuadroTrabalho,
-    updateQuadroTrabalho
+    updateQuadroTrabalho,
+    deletarQuadroPorId
 }

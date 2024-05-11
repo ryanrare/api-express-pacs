@@ -3,7 +3,8 @@ const {
     getQuadroTrabalhos,
     getQuadroTrabalho,
     postQuadroTrabalho,
-    patchQuadroTrabalho
+    patchQuadroTrabalho,
+    deleteQuadroTrabalho
 } = require("../controlers/quadro_trabalho")
 
 const router = Router()
@@ -17,8 +18,6 @@ router.post('/', postQuadroTrabalho)
 router.patch('/:id', patchQuadroTrabalho)
 
 
-router.delete('/', (req, res) => {
-    res.send('uma requisição do tipo DELETE')
-})
+router.delete('/:id', deleteQuadroTrabalho)
 
 module.exports = router

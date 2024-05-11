@@ -2,7 +2,8 @@ const {
     getTodosQuadroTrabalho,
     getQuadroTrabalhoByID,
     insertQuadroTrabalho,
-    updateQuadroTrabalho
+    updateQuadroTrabalho,
+    deletarQuadroPorId
 } = require("../services/quadro_trabalho")
 
 
@@ -53,9 +54,21 @@ function patchQuadroTrabalho(req, res) {
     }
 }
 
+function deleteQuadroTrabalho(req, res) {
+    try {
+        const id = req.params.id
+        deletarQuadroPorId(id)
+        res.send("livro deletado com sucesso")
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
+}
+
 module.exports = {
     getQuadroTrabalhos,
     getQuadroTrabalho,
     postQuadroTrabalho,
-    patchQuadroTrabalho
+    patchQuadroTrabalho,
+    deleteQuadroTrabalho
 }

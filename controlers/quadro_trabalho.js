@@ -47,7 +47,7 @@ function patchQuadroTrabalho(req, res) {
         const body = req.body
 
         updateQuadroTrabalho(body, id)
-        res.send("Item modificado com sucesso")
+        res.send("item do quadro de trabalho modificado com sucesso")
     } catch (error) {
         res.status(500)
         res.send(error.message)
@@ -58,7 +58,7 @@ function deleteQuadroTrabalho(req, res) {
     try {
         const id = req.params.id
         deletarQuadroPorId(id)
-        res.send("livro deletado com sucesso")
+        res.send("Quadro de trabalho deletado com sucesso")
     } catch (error) {
         res.status(500)
         res.send(error.message)
